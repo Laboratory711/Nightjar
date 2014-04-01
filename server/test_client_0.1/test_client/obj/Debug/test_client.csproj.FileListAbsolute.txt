@@ -1,0 +1,10 @@
+C:\project\server\test_client\test_client\bin\Debug\test_client.exe.config
+C:\project\server\test_client\test_client\bin\Debug\test_client.exe
+C:\project\server\test_client\test_client\bin\Debug\test_client.pdb
+C:\project\server\test_client\test_client\obj\Debug\test_client.exe
+C:\project\server\test_client\test_client\obj\Debug\test_client.pdb
+C:\project\server\test_client_0.1\test_client\bin\Debug\test_client.exe.config
+C:\project\server\test_client_0.1\test_client\obj\Debug\test_client.exe
+C:\project\server\test_client_0.1\test_client\obj\Debug\test_client.pdb
+C:\project\server\test_client_0.1\test_client\bin\Debug\test_client.exe
+C:\project\server\test_client_0.1\test_client\bin\Debug\test_client.pdb

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+    <EditTextPreference
+    android:key="@string/pref_IP"
+    android:title="Размер шрифта"
+    android:summary="Устанавливает новый размер шрифта"
+    android:defaultValue="14"
+    android:dialogTitle="Введите размер шрифта (от 10 до 32)" />
+    
+</PreferenceScreen>

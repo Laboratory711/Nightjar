@@ -1,0 +1,12 @@
+C:\project\mail\MailClass\ExampleVB\bin\Release\ExampleVB.exe
+C:\project\mail\MailClass\ExampleVB\bin\Release\ExampleVB.pdb
+C:\project\mail\MailClass\ExampleVB\bin\Release\ExampleVB.xml
+C:\project\mail\MailClass\ExampleVB\bin\Release\Pop3Lib.dll
+C:\project\mail\MailClass\ExampleVB\bin\Release\Pop3Lib.pdb
+C:\project\mail\MailClass\ExampleVB\bin\Release\Pop3Lib.xml
+C:\project\mail\MailClass\ExampleVB\obj\x86\Release\ExampleVB.vbprojResolveAssemblyReference.cache
+C:\project\mail\MailClass\ExampleVB\obj\x86\Release\ExampleVB.Resources.resources
+C:\project\mail\MailClass\ExampleVB\obj\x86\Release\ExampleVB.vbproj.GenerateResource.Cache
+C:\project\mail\MailClass\ExampleVB\obj\x86\Release\ExampleVB.exe
+C:\project\mail\MailClass\ExampleVB\obj\x86\Release\ExampleVB.xml
+C:\project\mail\MailClass\ExampleVB\obj\x86\Release\ExampleVB.pdb

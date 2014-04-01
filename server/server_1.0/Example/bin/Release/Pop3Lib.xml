@@ -1,0 +1,309 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Pop3Lib</name>
+    </assembly>
+    <members>
+        <member name="T:Pop3Lib.Result">
+            <summary>
+            Универсальный обработчик ответов почтового сервера
+            </summary>
+        </member>
+        <member name="M:Pop3Lib.Result.op_Implicit(System.String)~Pop3Lib.Result">
+            <summary>
+            Реализия неявного оператора преобразования
+            </summary>
+        </member>
+        <member name="M:Pop3Lib.Result.ParseStat(System.Int32@,System.Int32@)">
+            <summary>
+            Получает из ответа сервера информацию о количестве писем и их размере.
+            Используется только при команде STAT
+            </summary>
+            <param name="messagesCount">Передает количество сообщений (начиная с 1)</param>
+            <param name="messagesSize">Передает общий размер сообщений</param>
+        </member>
+        <member name="M:Pop3Lib.Result.ParseMail(Pop3Lib.MailItem@)">
+            <summary>
+            Метод передает обработанное письмо на основе данных, полученных от почтового сервера
+            </summary>
+            <param name="m">Переменная, в которую будет передано обработанное письмо</param>
+        </member>
+        <member name="P:Pop3Lib.Result.Source">
+            <summary>
+            Исходные данные
+            </summary>
+        </member>
+        <member name="P:Pop3Lib.Result.IsError">
+            <summary>
+            Показатель ошибки в ответе сервера
+            </summary>
+        </member>
+        <member name="P:Pop3Lib.Result.ServerMessage">
+            <summary>
+            Сообщение сервера (первая строка)
+            </summary>
+        </member>
+        <member name="P:Pop3Lib.Result.Body">
+            <summary>
+            Тело ответа сервера, исключая код ответа (IsError) и сообщение (ServerMessage)
+            </summary>
+        </member>
+        <member name="T:Pop3Lib.MIME.ContentDisposition">
+            <summary>
+            Объектное представление MIME-заголовка Content-Disposition
+            </summary>
+        </member>
+        <member name="T:Pop3Lib.MIME.ParametersBase">
+            <summary>
+            Базовый класс для обработки параметров в значения MIME-заголовков
+            </summary>
+        </member>
+        <member name="P:Pop3Lib.MIME.ParametersBase.Source">
+            <summary>
+            Источник данных
+            </summary>
+        </member>
+        <member name="P:Pop3Lib.MIME.ParametersBase.Type">
+            <summary>
+            Тип
+            </summary>
+        </member>
+        <member name="P:Pop3Lib.MIME.ParametersBase.Parameters">
+            <summary>
+            Коллекция параметров
+            </summary>
+        </member>
+        <member name="P:Pop3Lib.MIME.ContentDisposition.FileName">
+            <summary>
+            Имя файла
+            </summary>
+        </member>
+        <member name="T:Pop3Lib.MIME.ContentType">
+            <summary>
+            Объектное представление MIME-заголовка Content-Type
+            </summary>
+        </member>
+        <member name="P:Pop3Lib.MIME.ContentType.Charset">
+            <summary>
+            Кодировка
+            </summary>
+        </member>
+        <member name="P:Pop3Lib.MIME.ContentType.Boundary">
+            <summary>
+            Граница (для разделения различного типа содержимого)
+            </summary>
+        </member>
+        <member name="P:Pop3Lib.MIME.ContentType.Format">
+            <summary>
+            Формат
+            </summary>
+        </member>
+        <member name="P:Pop3Lib.MIME.ContentType.CodePage">
+            <summary>
+            Свойство содержит Encoding, полученный по имени Charset.
+            Если возникнут проблемы с этим свойством, то нужно будет добавить проверку Charset на известное имя кодировки.
+            </summary>
+        </member>
+        <member name="T:Pop3Lib.MailItemBase">
+            <summary>
+            Базовый класс для писем или частей писем
+            </summary>
+        </member>
+        <member name="M:Pop3Lib.MailItemBase.ParseMultiPart(System.String)">
+            <summary>
+            Метод парсит различные части письма
+            </summary>
+        </member>
+        <member name="M:Pop3Lib.MailItemBase.ParseHeaders(System.String)">
+            <summary>
+            Функция парсит заголовки и возвращает коллекцию Dictionary
+            </summary>
+            <param name="h">Источник, из которого нужно получить заголовки</param>
+        </member>
+        <member name="M:Pop3Lib.MailItemBase.HeadersEncode(System.Text.RegularExpressions.Match)">
+            <summary>
+            Функция обратного вызова, обрабатывается в методе ParseHeaders, производит декодирование данных в заголовках, в соответствии с найденными атрибутами.
+            </summary>
+        </member>
+        <member name="M:Pop3Lib.MailItemBase.ParseQuotedPrintable(System.String)">
+            <summary>
+            Функция производит декодирование Quoted-Printable.
+            </summary>
+            <param name="source">Текст для декодирования</param>
+        </member>
+        <member name="M:Pop3Lib.MailItemBase.QuotedPrintableEncode(System.Text.RegularExpressions.Match)">
+            <summary>
+            Функция обратного вызова, используется в функции ParseQuotedPrintable при обработке найденных совпадений.
+            </summary>
+        </member>
+        <member name="M:Pop3Lib.MailItemBase.ConvertCodePage(System.String,System.Text.Encoding)">
+            <summary>
+            Конвертирует текст из кодировки источника в кодировку по умолчанию
+            </summary>
+        </member>
+        <member name="M:Pop3Lib.MailItemBase.ConvertCodePage(System.Byte[],System.Text.Encoding)">
+            <summary>
+            Конвертирует текст из массива байт из кодировки источника в кодировку по умолчанию
+            </summary>
+        </member>
+        <member name="M:Pop3Lib.MailItemBase.DecodeContent(System.String,System.String)">
+            <summary>
+            Функция декодирует указанное содержимое
+            </summary>
+            <param name="contentTransferEncoding">Тип кодирования</param>
+            <param name="source">Содержимое, которые нужно декодировать</param>
+        </member>
+        <member name="M:Pop3Lib.MailItemBase.GetText">
+            <summary>
+            Хелпер-фукнция, возвращает текстовые данные текущей части письма.
+            Если письмо содержит данные отличные от текстовых, функция возвращает пустую строку.
+            </summary>
+        </member>
+        <member name="M:Pop3Lib.MailItemBase.GetBinary">
+            <summary>
+            Хелпер-фукнция, возвращает массив байт, содержащий бинарные данные текущей части письма.
+            Если письмо содержит данные отличные от бинарных, функция возвращает null.
+            </summary>
+        </member>
+        <member name="M:Pop3Lib.MailItemBase.GetItems">
+            <summary>
+            Хелпер-фукнция, возвращает коллекцию вложенных частей текущей части письма.
+            Если письмо содержит данные отличные от коллекции частей, функция возвращает null.
+            </summary>
+        </member>
+        <member name="P:Pop3Lib.MailItemBase.Source">
+            <summary>
+            Исходный текст письма (MIME)
+            </summary>
+        </member>
+        <member name="P:Pop3Lib.MailItemBase.Headers">
+            <summary>
+            Коллекция MIME-заголовков
+            </summary>
+        </member>
+        <member name="P:Pop3Lib.MailItemBase.ContentType">
+            <summary>
+            Тип содержимого
+            </summary>
+        </member>
+        <member name="P:Pop3Lib.MailItemBase.ContentDisposition">
+            <summary>
+            Дополнительная информация о содержимом
+            </summary>
+        </member>
+        <member name="P:Pop3Lib.MailItemBase.ContentTransferEncoding">
+            <summary>
+            Тип кодирования содержимого
+            </summary>
+        </member>
+        <member name="P:Pop3Lib.MailItemBase.Data">
+            <summary>
+            Содержимое
+            </summary>
+        </member>
+        <member name="P:Pop3Lib.MailItemBase.IsEmpty">
+            <summary>
+            Возвращает true, если в текущей части письма нет никаких данных
+            </summary>
+        </member>
+        <member name="P:Pop3Lib.MailItemBase.IsText">
+            <summary>
+            Возвращает true, если текущая часть письма содержит текстовые данные
+            </summary>
+        </member>
+        <member name="P:Pop3Lib.MailItemBase.IsBinary">
+            <summary>
+            Возвращает true, если текущая часть письма содержит бинарные данные
+            </summary>
+        </member>
+        <member name="P:Pop3Lib.MailItemBase.IsMultipart">
+            <summary>
+            Возвращает true, если текущая часть письма содержит вложенные части
+            </summary>
+        </member>
+        <member name="M:Pop3Lib.Client.Connect">
+            <summary>
+            Метод осуществляет подключение к почтовому серверу
+            </summary>
+        </member>
+        <member name="M:Pop3Lib.Client.Close">
+            <summary>
+            Метод завершает сеанс связи с сервером
+            </summary>
+        </member>
+        <member name="M:Pop3Lib.Client.GetMailHeaders(System.Int32)">
+            <summary>
+            Фукнция возвращает заголовки указанного письма
+            </summary>
+            <param name="index">Индекс письма, начиная с 1</param>
+        </member>
+        <member name="M:Pop3Lib.Client.NextMail(Pop3Lib.MailItem@)">
+            <summary>
+            Следующее письмо
+            </summary>
+        </member>
+        <member name="M:Pop3Lib.Client.Delete">
+            <summary>
+            Метод удаляет текущее письмо
+            </summary>
+        </member>
+        <member name="M:Pop3Lib.Client.Delete(System.Int32)">
+            <summary>
+            Метод удаляет указанное письмо
+            </summary>
+        </member>
+        <member name="M:Pop3Lib.Client.Command(System.String)">
+            <summary>
+            Метод отправляет команду почтовому серверу
+            </summary>
+            <param name="cmd">Команда</param>
+        </member>
+        <member name="M:Pop3Lib.Client.ReadLine">
+            <summary>
+            Считывает первую строку ответа сервера из буфера
+            </summary>
+        </member>
+        <member name="M:Pop3Lib.Client.ReadToEnd">
+            <summary>
+            Читает и возвращает все содержимое ответа сервера из буфера
+            </summary>
+        </member>
+        <member name="M:Pop3Lib.MailItemCollection.AddItem(System.String)">
+            <summary>
+            Добавляет общую часть письма в коллекцию
+            </summary>
+            <param name="source">MIME части письма с содержимым</param>
+        </member>
+        <member name="M:Pop3Lib.MailItem.ParseMail(System.String)">
+            <summary>
+            Функция парсит адрес электронной почты и возвращает объект типа MailAddress
+            </summary>
+            <param name="source">Строка, из которой нужно получить MailAddress</param>
+        </member>
+        <member name="P:Pop3Lib.MailItem.Subject">
+            <summary>
+            Тема письма
+            </summary>
+        </member>
+        <member name="P:Pop3Lib.MailItem.From">
+            <summary>
+            Отправитель письма
+            </summary>
+        </member>
+        <member name="P:Pop3Lib.MailItem.To">
+            <summary>
+            Получатель письма
+            </summary>
+        </member>
+        <member name="P:Pop3Lib.MailItem.ReturnPath">
+            <summary>
+            Кому писать ответ
+            </summary>
+        </member>
+        <member name="P:Pop3Lib.MailItem.Date">
+            <summary>
+            Дата письма
+            </summary>
+        </member>
+    </members>
+</doc>

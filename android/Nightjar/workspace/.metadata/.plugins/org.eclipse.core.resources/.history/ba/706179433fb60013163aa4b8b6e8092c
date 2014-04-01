@@ -1,0 +1,155 @@
+package ru.vint.labsoo;
+
+import java.io.File;
+import java.io.FilenameFilter;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.ActionBar;
+import android.support.v4.app.Fragment;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.os.Build;
+import android.widget.EditText;
+import android.widget.Toast;
+
+
+public class Notepad extends ActionBarActivity {
+
+	private final static String FILENAME = "sample.txt";
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_notepad);
+
+		if (savedInstanceState == null) {
+			getSupportFragmentManager().beginTransaction()
+					.add(R.id.container, new PlaceholderFragment()).commit();
+		}
+	}
+
+	//===========================================================
+	public static String[] files(File path, FilenameFilter filter){
+	       final ArrayList<String> files = new ArrayList<String>();
+	       
+	       for(File a:path.listFiles(filter))
+	          if(a.isFile())files.add(a.getName().toString());
+	       
+	       String[] res=(String[]) 
+	          files.toArray(new String[files.size()]);
+	       Arrays.sort(res, new MySort());
+	     
+	       return res;
+	    }
+	public static String FILENAME_FILTER = "(?i)^feeder\\-.*?\\.html$";
+	//public static String CURRENT_PATH = getApplicationInfo().dataDir;
+	File dir;
+	String[] FILE_LIST;
+	public void onClicOpen(View v)
+	{
+		FilenameFilter filter = new FilenameFilter() {
+			
+			@Override
+			public boolean accept(File dir, String filename) {
+				// TODO Auto-generated method stub
+				return filename.matches(FILENAME_FILTER);
+				
+			}
+		};
+		dir=new File(getApplicationInfo().dataDir);
+		FILE_LIST = files(dir,filter);
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		builder = new AlertDialog.Builder(this);
+        builder.setTitle("Выбирите файл"); // заголовок для диалога
+
+        builder.setItems(FILE_LIST, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int item) {
+                // TODO Auto-generated method stub
+            	dialog.cancel();
+                Toast.makeText(getApplicationContext(),
+                        "Выбранный кот: " + FILE_LIST[item],
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+        builder.setCancelable(true);
+        AlertDialog alert = builder.create();
+    	alert.show();
+	}
+	
+	
+	public void onClickSave(View v)
+	{
+		AlertDialog.Builder builder = new AlertDialog.Builder(Notepad.this);
+		builder.setTitle("Введите имя файла")
+				.setView(new EditText(Notepad.this))
+				.setCancelable(true)
+				.setNegativeButton("ОК",
+						new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog, int id) {
+								
+								dialog.cancel();
+							}
+						});
+		AlertDialog alert = builder.create();
+		alert.show();
+		
+	}
+	
+	//===========================================================
+	
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.notepad, menu);
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// Handle action bar item clicks here. The action bar will
+		// automatically handle clicks on the Home/Up button, so long
+		// as you specify a parent activity in AndroidManifest.xml.
+		int id = item.getItemId();
+		if (id == R.id.action_settings) {
+			return true;
+		}
+		return super.onOptionsItemSelected(item);
+	}
+
+	/**
+	 * A placeholder fragment containing a simple view.
+	 */
+	public static class PlaceholderFragment extends Fragment {
+
+		public PlaceholderFragment() {
+		}
+
+		@Override
+		public View onCreateView(LayoutInflater inflater, ViewGroup container,
+				Bundle savedInstanceState) {
+			View rootView = inflater.inflate(R.layout.fragment_notepad,
+					container, false);
+			return rootView;
+		}
+	}
+	public static class MySort implements Comparator<String> {
+	 	@Override
+	 	public int compare(String str1, String str2) {
+	 		str1=str1.toUpperCase();
+	 		str2=str2.toUpperCase();
+	 		return str1.compareTo(str2);
+	 	}
+	 }
+}

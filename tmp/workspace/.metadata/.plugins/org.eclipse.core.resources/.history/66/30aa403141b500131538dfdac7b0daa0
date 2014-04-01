@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <string name="app_name">LabSOO</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Настройки</string>
+    <string android:layout_width="wrap_content" android:id="@+id/string1" android:layout_height="wrap_content" name="text_IP">IP Адрес сервера</string>
+    <string android:id="@+id/string2" android:layout_height="wrap_content" android:layout_width="wrap_content" name="text_Port">Адрес порта</string>
+    <string android:id="@+id/string3" android:layout_height="wrap_content" android:layout_width="wrap_content" name="text_buttom_Name">Подключиться к серверу</string>
+    <string android:id="@+id/string4" android:layout_height="wrap_content" android:layout_width="wrap_content" name="TV_text"></string>
+    <string android:id="@+id/string5" android:layout_height="wrap_content" android:layout_width="wrap_content" name="text_pref_app">Приложение написано группой студентов.</string>
+	<string name="pref_IP">IP_adres</string>
+	<string name="pref_App">App</string>
+	<string name="pref_Port">Prot</string>
+</resources>

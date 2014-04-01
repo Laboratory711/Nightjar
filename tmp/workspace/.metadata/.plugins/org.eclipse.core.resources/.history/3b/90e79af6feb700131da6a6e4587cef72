@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="ru.vint.labsoo"
+    android:versionCode="1"
+    android:versionName="1.0"
+    tools:locale="ru" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="19" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="ru.vint.labsoo.Lab1"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="ru.vint.labsoo.Settings"
+            android:label="@string/title_activity_settings" >
+        </activity>
+        <activity
+            android:name="ru.vint.labsoo.About"
+            android:label="@string/about_title" >
+        </activity>
+        <activity
+            android:name="ru.vint.labsoo.List"
+            android:label="@string/title_activity_list" >
+        </activity>
+        <activity
+            android:name="ru.vint.labsoo.Notepad"
+            android:label="@string/title_activity_notepad" >
+        </activity>
+    </application>
+
+</manifest>

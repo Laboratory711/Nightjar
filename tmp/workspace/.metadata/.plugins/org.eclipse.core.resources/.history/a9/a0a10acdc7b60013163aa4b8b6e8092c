@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <string android:id="@+id/string5" name="text_about" android:layout_width="wrap_content" android:layout_height="wrap_content">        
+        \tДанное приложение не функцианирует без серверной части.\n
+        \t<b>Для установки соединения с сервером перейдите в раздел настройки и установите IP адрес сервера и порт(если на сервере используеться отличный от настроек по умолчанию).</b>
+        \tПриложение управляет некоторыми возможностями компьютера с помощью скриптового языка AutoIT.\n
+        \tБолее полную информацию можно посмотреть в документации к серверной части.\n
+        \tПриложение написано группой студентов.\n
+        \t\tКувшинов Иван\n
+        \t\tАбаев Азамат\n
+        \t\tКремнева Анастасия\n
+        \t\tКузнецова Полина\n
+        \t\tДимеденко Ольга\n
+        \t\tИванова Анастасия\n
+        \n
+        \tИспользовать данную версию приложение можно совершенно безвозмездно. =)\n	</string>
+    <string name="app_name">LabSOO</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Настройки</string>
+    <string name="action_about">О программе</string>
+    <string android:id="@+id/string1" name="text_IP" android:layout_width="wrap_content" android:layout_height="wrap_content">IP Адрес сервера</string>
+    <string android:id="@+id/string2" name="text_Port" android:layout_width="wrap_content" android:layout_height="wrap_content">Адрес порта</string>
+    <string android:id="@+id/string3" name="text_buttom_Name" android:layout_width="wrap_content" android:layout_height="wrap_content">Подключиться к серверу</string>
+    <string android:id="@+id/string4" name="TV_text" android:layout_width="wrap_content" android:layout_height="wrap_content"></string>
+    <string android:id="@+id/string6" name="text_buttom2_Name" android:layout_width="wrap_content" android:layout_height="wrap_content">Выполнить скрипт</string>
+    <string android:id="@+id/string8" name="text_buttom4_Name" android:layout_width="wrap_content" android:layout_height="wrap_content">Открыть редактор</string>
+    <string android:id="@+id/string9" name="text_List" android:layout_width="wrap_content" android:layout_height="wrap_content">Выбирите скрипт</string>
+    <string name="pref_IP">IP_adres</string>
+    <string name="pref_App">App</string>
+    <string name="pref_Port">Prot</string>
+    <string name="title_activity_list">List</string>
+    <string name="about_title">О программе</string>
+    <string name="title_activity_notepad">Notepad</string>
+
+</resources>

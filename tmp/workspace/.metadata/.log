@@ -1,0 +1,845 @@
+!SESSION 2014-03-25 14:36:49.560 -----------------------------------------------
+eclipse.buildId=M20130131-0800
+java.version=1.7.0_51
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ru_RU
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.ui 2 2 2014-03-25 14:50:16.575
+!MESSAGE Invalid property category path: ValidationPropertiesPage (bundle: org.eclipse.wst.xml.ui, propertyPage: org.eclipse.wst.xml.ui.propertyPage.project.validation)
+!SESSION 2014-03-25 14:50:24.672 -----------------------------------------------
+eclipse.buildId=M20130131-0800
+java.version=1.7.0_51
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ru_RU
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-03-25 14:53:42.503
+!MESSAGE Failed to load properties file for project 'LabSOO'
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-03-25 14:54:07.155
+!MESSAGE Failed to render set of icons for AnalogClock, AutoCompleteTextView, Button, SmallButton, CheckBox, CheckedTextView, DigitalClock, PlainText, Password, PasswordNumeric, PersonName, Phone, PostalAddress, MultilineText, Date, Time, Email, Number, NumberSigned, NumberDecimal, LargeText, MediumText, SmallText, MultiAutoCompleteTextView, ProgressBarNormal, ProgressBarHorizontal, ProgressBarLarge, ProgressBarSmall, QuickContactBadge, RadioButton, RatingBar, SeekBar, ListView, ExpandableListView, Spinner, TextView, ToggleButton, ZoomButton, ZoomControls, CalendarView, RadioGroup
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-03-25 14:54:07.158
+!MESSAGE Write access not allowed during rendering (user.timezone)
+!STACK 0
+Write access not allowed during rendering (user.timezone)
+	at com.android.ide.common.rendering.RenderSecurityException.create(RenderSecurityException.java:52)
+	at com.android.ide.common.rendering.RenderSecurityManager.checkPermission(RenderSecurityManager.java:605)
+	at java.util.TimeZone.hasPermission(Unknown Source)
+	at java.util.TimeZone.setDefault(Unknown Source)
+	at com.ibm.icu.util.TimeZone.setDefault(TimeZone.java:973)
+	at libcore.icu.DateIntervalFormat_Delegate.createDateIntervalFormat(DateIntervalFormat_Delegate.java:61)
+	at libcore.icu.DateIntervalFormat.createDateIntervalFormat(DateIntervalFormat.java)
+	at libcore.icu.DateIntervalFormat.getFormatter(DateIntervalFormat.java:112)
+	at libcore.icu.DateIntervalFormat.formatDateRange(DateIntervalFormat.java:102)
+	at libcore.icu.DateIntervalFormat.formatDateRange(DateIntervalFormat.java:71)
+	at android.text.format.DateUtils.formatDateRange(DateUtils.java:826)
+	at android.text.format.DateUtils.formatDateRange(DateUtils.java:651)
+	at android.text.format.DateUtils.formatDateRange(DateUtils.java:628)
+	at android.text.format.DateUtils.formatDateTime(DateUtils.java:878)
+	at android.widget.AnalogClock.updateContentDescription(AnalogClock.java:256)
+	at android.widget.AnalogClock.onTimeChanged(AnalogClock.java:237)
+	at android.widget.AnalogClock.onAttachedToWindow(AnalogClock.java:121)
+	at android.view.View.dispatchAttachedToWindow(View.java:12585)
+	at android.view.ViewGroup.dispatchAttachedToWindow(ViewGroup.java:2465)
+	at android.view.ViewGroup.dispatchAttachedToWindow(ViewGroup.java:2465)
+	at android.view.AttachInfo_Accessor.setAttachInfo(AttachInfo_Accessor.java:42)
+	at com.android.layoutlib.bridge.impl.RenderSessionImpl.inflate(RenderSessionImpl.java:407)
+	at com.android.layoutlib.bridge.Bridge.createSession(Bridge.java:336)
+	at com.android.ide.common.rendering.LayoutLibrary.createSession(LayoutLibrary.java:332)
+	at com.android.ide.eclipse.adt.internal.editors.layout.gle2.RenderService.createRenderSession(RenderService.java:504)
+	at com.android.ide.eclipse.adt.internal.editors.layout.gle2.PreviewIconFactory.render(PreviewIconFactory.java:273)
+	at com.android.ide.eclipse.adt.internal.editors.layout.gle2.PreviewIconFactory.initColors(PreviewIconFactory.java:595)
+	at com.android.ide.eclipse.adt.internal.editors.layout.gle2.PreviewIconFactory.getBackgroundColor(PreviewIconFactory.java:570)
+	at com.android.ide.eclipse.adt.internal.editors.layout.gle2.PaletteControl.reloadPalette(PaletteControl.java:437)
+	at com.android.ide.eclipse.adt.internal.editors.layout.gle2.GraphicalEditorPart.reloadPalette(GraphicalEditorPart.java:1327)
+	at com.android.ide.eclipse.adt.internal.editors.layout.gle2.GraphicalEditorPart.changed(GraphicalEditorPart.java:771)
+	at com.android.ide.eclipse.adt.internal.editors.layout.gle2.GraphicalEditorPart.onTargetChange(GraphicalEditorPart.java:1196)
+	at com.android.ide.eclipse.adt.internal.editors.layout.LayoutEditorDelegate.onDescriptorsChanged(LayoutEditorDelegate.java:916)
+	at com.android.ide.eclipse.adt.internal.editors.layout.LayoutEditorDelegate.delegateInitUiRootNode(LayoutEditorDelegate.java:835)
+	at com.android.ide.eclipse.adt.internal.editors.layout.gle2.GraphicalEditorPart$TargetListener.updateEditor(GraphicalEditorPart.java:953)
+	at com.android.ide.eclipse.adt.internal.editors.layout.gle2.GraphicalEditorPart$TargetListener.onTargetLoaded(GraphicalEditorPart.java:917)
+	at com.android.ide.eclipse.adt.AdtPlugin$11.run(AdtPlugin.java:1759)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4144)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3761)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2701)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2665)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2499)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:679)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:668)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:124)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:353)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:180)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:629)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:584)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1438)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1414)
+
+!ENTRY org.eclipse.ui 2 2 2014-03-25 15:04:19.129
+!MESSAGE Invalid property category path: ValidationPropertiesPage (bundle: org.eclipse.wst.xml.ui, propertyPage: org.eclipse.wst.xml.ui.propertyPage.project.validation)
+!SESSION 2014-03-25 18:57:36.685 -----------------------------------------------
+eclipse.buildId=M20130131-0800
+java.version=1.7.0_51
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ru_RU
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.core.resources 2 10035 2014-03-25 18:57:39.686
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.ui 4 4 2014-03-26 00:46:37.590
+!MESSAGE Referenced part does not exist yet: org.eclipse.ui.views.ProblemView.
+
+!ENTRY org.eclipse.ui 2 2 2014-03-26 18:29:08.047
+!MESSAGE Invalid property category path: ValidationPropertiesPage (bundle: org.eclipse.wst.xml.ui, propertyPage: org.eclipse.wst.xml.ui.propertyPage.project.validation)
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-03-26 18:34:59.960
+!MESSAGE fragment_lab1.xml: Unexpected error in rendering, no details given
+
+!ENTRY com.android.ide.eclipse.adt 1 0 2014-03-26 20:57:00.916
+!MESSAGE NewXmlFile wizard: no data for target Android 4.4.2, project LabSOO
+
+!ENTRY com.android.ide.eclipse.adt 1 0 2014-03-26 20:57:01.017
+!MESSAGE NewXmlFile wizard: no data for target Android 4.4.2, project LabSOO
+
+!ENTRY com.android.ide.eclipse.adt 1 0 2014-03-26 20:57:01.020
+!MESSAGE NewXmlFile wizard: no data for target Android 4.4.2, project LabSOO
+
+!ENTRY com.android.ide.eclipse.adt 1 0 2014-03-26 20:57:01.022
+!MESSAGE NewXmlFile wizard: no data for target Android 4.4.2, project LabSOO
+
+!ENTRY com.android.ide.eclipse.adt 1 0 2014-03-26 20:57:01.025
+!MESSAGE NewXmlFile wizard: no data for target Android 4.4.2, project LabSOO
+
+!ENTRY com.android.ide.eclipse.adt 1 0 2014-03-26 20:57:01.027
+!MESSAGE NewXmlFile wizard: no data for target Android 4.4.2, project LabSOO
+
+!ENTRY com.android.ide.eclipse.adt 1 0 2014-03-26 20:57:01.029
+!MESSAGE NewXmlFile wizard: no data for target Android 4.4.2, project LabSOO
+
+!ENTRY com.android.ide.eclipse.adt 1 0 2014-03-26 20:57:01.032
+!MESSAGE NewXmlFile wizard: no data for target Android 4.4.2, project LabSOO
+
+!ENTRY com.android.ide.eclipse.adt 1 0 2014-03-27 16:57:35.593
+!MESSAGE NewXmlFile wizard: no data for target Android 4.4.2, project LabSOO
+
+!ENTRY com.android.ide.eclipse.adt 1 0 2014-03-27 16:57:35.650
+!MESSAGE NewXmlFile wizard: no data for target Android 4.4.2, project LabSOO
+
+!ENTRY com.android.ide.eclipse.adt 1 0 2014-03-27 16:57:35.653
+!MESSAGE NewXmlFile wizard: no data for target Android 4.4.2, project LabSOO
+
+!ENTRY com.android.ide.eclipse.adt 1 0 2014-03-27 16:57:35.656
+!MESSAGE NewXmlFile wizard: no data for target Android 4.4.2, project LabSOO
+
+!ENTRY com.android.ide.eclipse.adt 1 0 2014-03-27 16:57:35.660
+!MESSAGE NewXmlFile wizard: no data for target Android 4.4.2, project LabSOO
+
+!ENTRY com.android.ide.eclipse.adt 1 0 2014-03-27 16:57:35.663
+!MESSAGE NewXmlFile wizard: no data for target Android 4.4.2, project LabSOO
+
+!ENTRY com.android.ide.eclipse.adt 1 0 2014-03-27 16:57:35.666
+!MESSAGE NewXmlFile wizard: no data for target Android 4.4.2, project LabSOO
+
+!ENTRY com.android.ide.eclipse.adt 1 0 2014-03-27 16:57:35.669
+!MESSAGE NewXmlFile wizard: no data for target Android 4.4.2, project LabSOO
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-03-27 17:01:08.959
+!MESSAGE Warning: Ignoring name conflict in resource file for name hello_world
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-03-27 17:01:08.962
+!MESSAGE Warning: Ignoring name conflict in resource file for name action_settings
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-03-27 17:01:08.977
+!MESSAGE Warning: Ignoring name conflict in resource file for name activity_horizontal_margin
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-03-27 17:01:08.980
+!MESSAGE Warning: Ignoring name conflict in resource file for name activity_vertical_margin
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-03-27 17:01:08.991
+!MESSAGE Warning: Ignoring name conflict in resource file for name activity_horizontal_margin
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-03-27 17:01:20.170
+!MESSAGE Warning: Ignoring name conflict in resource file for name hello_world
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-03-27 17:01:20.173
+!MESSAGE Warning: Ignoring name conflict in resource file for name action_settings
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-03-27 17:01:20.182
+!MESSAGE Warning: Ignoring name conflict in resource file for name activity_horizontal_margin
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-03-27 17:01:20.185
+!MESSAGE Warning: Ignoring name conflict in resource file for name activity_vertical_margin
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-03-27 17:01:20.191
+!MESSAGE Warning: Ignoring name conflict in resource file for name activity_horizontal_margin
+
+!ENTRY com.android.ide.eclipse.adt 1 0 2014-03-27 17:41:13.163
+!MESSAGE NewXmlFile wizard: no data for target Android 4.4.2, project LabSOO
+
+!ENTRY com.android.ide.eclipse.adt 1 0 2014-03-27 17:41:13.167
+!MESSAGE NewXmlFile wizard: no data for target Android 4.4.2, project LabSOO
+
+!ENTRY com.android.ide.eclipse.adt 1 0 2014-03-27 17:41:13.171
+!MESSAGE NewXmlFile wizard: no data for target Android 4.4.2, project LabSOO
+
+!ENTRY com.android.ide.eclipse.adt 1 0 2014-03-27 17:41:13.173
+!MESSAGE NewXmlFile wizard: no data for target Android 4.4.2, project LabSOO
+
+!ENTRY com.android.ide.eclipse.adt 1 0 2014-03-27 17:41:13.178
+!MESSAGE NewXmlFile wizard: no data for target Android 4.4.2, project LabSOO
+
+!ENTRY com.android.ide.eclipse.adt 1 0 2014-03-27 17:41:13.181
+!MESSAGE NewXmlFile wizard: no data for target Android 4.4.2, project LabSOO
+
+!ENTRY com.android.ide.eclipse.adt 1 0 2014-03-27 17:41:13.185
+!MESSAGE NewXmlFile wizard: no data for target Android 4.4.2, project LabSOO
+
+!ENTRY com.android.ide.eclipse.adt 1 0 2014-03-27 17:41:13.188
+!MESSAGE NewXmlFile wizard: no data for target Android 4.4.2, project LabSOO
+
+!ENTRY com.android.ide.eclipse.adt 1 0 2014-03-27 17:49:45.315
+!MESSAGE NewXmlFile wizard: no data for target Android 4.4.2, project LabSOO
+
+!ENTRY com.android.ide.eclipse.adt 1 0 2014-03-27 17:49:45.319
+!MESSAGE NewXmlFile wizard: no data for target Android 4.4.2, project LabSOO
+
+!ENTRY com.android.ide.eclipse.adt 1 0 2014-03-27 17:49:45.322
+!MESSAGE NewXmlFile wizard: no data for target Android 4.4.2, project LabSOO
+
+!ENTRY com.android.ide.eclipse.adt 1 0 2014-03-27 17:49:45.326
+!MESSAGE NewXmlFile wizard: no data for target Android 4.4.2, project LabSOO
+
+!ENTRY com.android.ide.eclipse.adt 1 0 2014-03-27 17:49:45.331
+!MESSAGE NewXmlFile wizard: no data for target Android 4.4.2, project LabSOO
+
+!ENTRY com.android.ide.eclipse.adt 1 0 2014-03-27 17:49:45.335
+!MESSAGE NewXmlFile wizard: no data for target Android 4.4.2, project LabSOO
+
+!ENTRY com.android.ide.eclipse.adt 1 0 2014-03-27 17:49:45.339
+!MESSAGE NewXmlFile wizard: no data for target Android 4.4.2, project LabSOO
+
+!ENTRY com.android.ide.eclipse.adt 1 0 2014-03-27 17:49:45.342
+!MESSAGE NewXmlFile wizard: no data for target Android 4.4.2, project LabSOO
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-03-27 18:23:46.345
+!MESSAGE No projects found for [C:\Users\Иван\workspace\LabSOO\res\values\strings.xml]
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-03-27 18:28:31.634
+!MESSAGE Warning: Ignoring name conflict in resource file for name title_activity_list
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-03-27 18:28:31.658
+!MESSAGE Warning: Ignoring name conflict in resource file for name hello_world
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-03-27 18:28:31.661
+!MESSAGE Warning: Ignoring name conflict in resource file for name action_settings
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-03-27 18:28:31.670
+!MESSAGE Warning: Ignoring name conflict in resource file for name activity_horizontal_margin
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-03-27 18:28:31.673
+!MESSAGE Warning: Ignoring name conflict in resource file for name activity_vertical_margin
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-03-27 18:28:31.680
+!MESSAGE Warning: Ignoring name conflict in resource file for name activity_horizontal_margin
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-03-27 18:28:33.640
+!MESSAGE Warning: Ignoring name conflict in resource file for name title_activity_list
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-03-27 18:28:33.644
+!MESSAGE Warning: Ignoring name conflict in resource file for name hello_world
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-03-27 18:28:33.646
+!MESSAGE Warning: Ignoring name conflict in resource file for name action_settings
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-03-27 18:28:33.656
+!MESSAGE Warning: Ignoring name conflict in resource file for name activity_horizontal_margin
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-03-27 18:28:33.659
+!MESSAGE Warning: Ignoring name conflict in resource file for name activity_vertical_margin
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-03-27 18:28:33.667
+!MESSAGE Warning: Ignoring name conflict in resource file for name activity_horizontal_margin
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-03-27 19:10:36.232
+!MESSAGE list.xml: PermGen space
+!STACK 0
+java.lang.OutOfMemoryError: PermGen space
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-03-27 19:10:37.884
+!MESSAGE list.xml: PermGen space
+!STACK 0
+java.lang.OutOfMemoryError: PermGen space
+
+!ENTRY org.eclipse.ui 4 0 2014-03-27 19:10:37.887
+!MESSAGE Error occurred during status handling
+!STACK 0
+java.lang.OutOfMemoryError: PermGen space
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-03-27 19:13:19.935
+!MESSAGE list.xml: PermGen space
+!STACK 0
+java.lang.OutOfMemoryError: PermGen space
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-03-27 19:13:21.447
+!MESSAGE list.xml: PermGen space
+!STACK 0
+java.lang.OutOfMemoryError: PermGen space
+
+!ENTRY org.eclipse.ui 4 0 2014-03-27 19:13:21.450
+!MESSAGE Error occurred during status handling
+!STACK 0
+java.lang.OutOfMemoryError: PermGen space
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-03-27 19:48:07.178
+!MESSAGE list.xml: PermGen space
+!STACK 0
+java.lang.OutOfMemoryError: PermGen space
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-03-27 19:48:08.882
+!MESSAGE list.xml: PermGen space
+!STACK 0
+java.lang.OutOfMemoryError: PermGen space
+
+!ENTRY org.eclipse.ui 4 0 2014-03-27 19:48:08.885
+!MESSAGE Error occurred during status handling
+!STACK 0
+java.lang.OutOfMemoryError: PermGen space
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-03-27 19:49:59.111
+!MESSAGE list.xml: PermGen space
+!STACK 0
+java.lang.OutOfMemoryError: PermGen space
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-03-27 19:50:00.824
+!MESSAGE list.xml: PermGen space
+!STACK 0
+java.lang.OutOfMemoryError: PermGen space
+
+!ENTRY org.eclipse.ui 4 0 2014-03-27 19:50:00.827
+!MESSAGE Error occurred during status handling
+!STACK 0
+java.lang.OutOfMemoryError: PermGen space
+!SESSION 2014-03-27 19:51:23.098 -----------------------------------------------
+eclipse.buildId=M20130131-0800
+java.version=1.7.0_51
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ru_RU
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.core.resources 2 10035 2014-03-27 19:51:28.774
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.ui 4 4 2014-03-27 21:35:48.562
+!MESSAGE Referenced part does not exist yet: org.eclipse.ui.views.ProblemView.
+
+!ENTRY org.eclipse.ui 2 2 2014-03-28 06:12:44.595
+!MESSAGE Invalid property category path: ValidationPropertiesPage (bundle: org.eclipse.wst.xml.ui, propertyPage: org.eclipse.wst.xml.ui.propertyPage.project.validation)
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-03-28 06:14:49.631
+!MESSAGE Warning: Ignoring name conflict in resource file for name hello_world
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-03-28 06:14:49.648
+!MESSAGE Warning: Ignoring name conflict in resource file for name action_settings
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-03-28 06:14:49.689
+!MESSAGE Warning: Ignoring name conflict in resource file for name activity_horizontal_margin
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-03-28 06:14:49.691
+!MESSAGE Warning: Ignoring name conflict in resource file for name activity_vertical_margin
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-03-28 06:14:49.730
+!MESSAGE Warning: Ignoring name conflict in resource file for name activity_horizontal_margin
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-03-28 06:14:54.893
+!MESSAGE Warning: Ignoring name conflict in resource file for name hello_world
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-03-28 06:14:54.896
+!MESSAGE Warning: Ignoring name conflict in resource file for name action_settings
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-03-28 06:14:54.907
+!MESSAGE Warning: Ignoring name conflict in resource file for name activity_horizontal_margin
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-03-28 06:14:54.910
+!MESSAGE Warning: Ignoring name conflict in resource file for name activity_vertical_margin
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-03-28 06:14:54.916
+!MESSAGE Warning: Ignoring name conflict in resource file for name activity_horizontal_margin
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-03-30 02:15:02.283
+!MESSAGE Failed to render set of icons for AnalogClock, AutoCompleteTextView, Button, SmallButton, CheckBox, CheckedTextView, DigitalClock, PlainText, Password, PasswordNumeric, PersonName, Phone, PostalAddress, MultilineText, Date, Time, Email, Number, NumberSigned, NumberDecimal, LargeText, MediumText, SmallText, MultiAutoCompleteTextView, ProgressBarNormal, ProgressBarHorizontal, ProgressBarLarge, ProgressBarSmall, QuickContactBadge, RadioButton, RatingBar, SeekBar, ListView, ExpandableListView, Spinner, TextView, ToggleButton, ZoomButton, ZoomControls, CalendarView, RadioGroup
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-03-30 02:15:02.325
+!MESSAGE Write access not allowed during rendering (user.timezone)
+!STACK 0
+Write access not allowed during rendering (user.timezone)
+	at com.android.ide.common.rendering.RenderSecurityException.create(RenderSecurityException.java:52)
+	at com.android.ide.common.rendering.RenderSecurityManager.checkPermission(RenderSecurityManager.java:605)
+	at java.util.TimeZone.hasPermission(Unknown Source)
+	at java.util.TimeZone.setDefault(Unknown Source)
+	at com.ibm.icu.util.TimeZone.setDefault(TimeZone.java:973)
+	at libcore.icu.DateIntervalFormat_Delegate.createDateIntervalFormat(DateIntervalFormat_Delegate.java:61)
+	at libcore.icu.DateIntervalFormat.createDateIntervalFormat(DateIntervalFormat.java)
+	at libcore.icu.DateIntervalFormat.getFormatter(DateIntervalFormat.java:112)
+	at libcore.icu.DateIntervalFormat.formatDateRange(DateIntervalFormat.java:102)
+	at libcore.icu.DateIntervalFormat.formatDateRange(DateIntervalFormat.java:71)
+	at android.text.format.DateUtils.formatDateRange(DateUtils.java:826)
+	at android.text.format.DateUtils.formatDateRange(DateUtils.java:651)
+	at android.text.format.DateUtils.formatDateRange(DateUtils.java:628)
+	at android.text.format.DateUtils.formatDateTime(DateUtils.java:878)
+	at android.widget.AnalogClock.updateContentDescription(AnalogClock.java:256)
+	at android.widget.AnalogClock.onTimeChanged(AnalogClock.java:237)
+	at android.widget.AnalogClock.onAttachedToWindow(AnalogClock.java:121)
+	at android.view.View.dispatchAttachedToWindow(View.java:12585)
+	at android.view.ViewGroup.dispatchAttachedToWindow(ViewGroup.java:2465)
+	at android.view.ViewGroup.dispatchAttachedToWindow(ViewGroup.java:2465)
+	at android.view.AttachInfo_Accessor.setAttachInfo(AttachInfo_Accessor.java:42)
+	at com.android.layoutlib.bridge.impl.RenderSessionImpl.inflate(RenderSessionImpl.java:407)
+	at com.android.layoutlib.bridge.Bridge.createSession(Bridge.java:336)
+	at com.android.ide.common.rendering.LayoutLibrary.createSession(LayoutLibrary.java:332)
+	at com.android.ide.eclipse.adt.internal.editors.layout.gle2.RenderService.createRenderSession(RenderService.java:504)
+	at com.android.ide.eclipse.adt.internal.editors.layout.gle2.PreviewIconFactory.render(PreviewIconFactory.java:273)
+	at com.android.ide.eclipse.adt.internal.editors.layout.gle2.PreviewIconFactory.initColors(PreviewIconFactory.java:595)
+	at com.android.ide.eclipse.adt.internal.editors.layout.gle2.PreviewIconFactory.getBackgroundColor(PreviewIconFactory.java:570)
+	at com.android.ide.eclipse.adt.internal.editors.layout.gle2.PaletteControl.reloadPalette(PaletteControl.java:437)
+	at com.android.ide.eclipse.adt.internal.editors.layout.gle2.GraphicalEditorPart.reloadPalette(GraphicalEditorPart.java:1327)
+	at com.android.ide.eclipse.adt.internal.editors.layout.gle2.GraphicalEditorPart.changed(GraphicalEditorPart.java:771)
+	at com.android.ide.eclipse.adt.internal.editors.layout.configuration.ConfigurationChooser.onDeviceChange(ConfigurationChooser.java:1410)
+	at com.android.ide.eclipse.adt.internal.editors.layout.configuration.DeviceMenuListener.widgetSelected(DeviceMenuListener.java:67)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:248)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4169)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3758)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2701)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2665)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2499)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:679)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:668)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:124)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:353)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:180)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:629)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:584)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1438)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1414)
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-03-30 04:16:46.769
+!MESSAGE fragment_lab1.xml: Couldn't resolve resource @string/text_buttom_del_Name
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-03-30 04:16:46.978
+!MESSAGE fragment_lab1.xml: Couldn't resolve resource @string/text_buttom_del_Name
+!SESSION 2014-03-30 07:39:44.756 -----------------------------------------------
+eclipse.buildId=M20130131-0800
+java.version=1.7.0_51
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ru_RU
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.ui 2 2 2014-03-30 07:41:30.268
+!MESSAGE Invalid property category path: ValidationPropertiesPage (bundle: org.eclipse.wst.xml.ui, propertyPage: org.eclipse.wst.xml.ui.propertyPage.project.validation)
+!SESSION 2014-03-30 07:41:31.930 -----------------------------------------------
+eclipse.buildId=M20130131-0800
+java.version=1.7.0_51
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ru_RU
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.ui 2 2 2014-03-30 09:28:26.485
+!MESSAGE Invalid property category path: ValidationPropertiesPage (bundle: org.eclipse.wst.xml.ui, propertyPage: org.eclipse.wst.xml.ui.propertyPage.project.validation)
+!SESSION 2014-03-30 09:29:13.890 -----------------------------------------------
+eclipse.buildId=M20130131-0800
+java.version=1.7.0_51
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ru_RU
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.ui 2 2 2014-03-30 09:31:47.555
+!MESSAGE Invalid property category path: ValidationPropertiesPage (bundle: org.eclipse.wst.xml.ui, propertyPage: org.eclipse.wst.xml.ui.propertyPage.project.validation)
+!SESSION 2014-03-30 09:35:05.166 -----------------------------------------------
+eclipse.buildId=M20130131-0800
+java.version=1.7.0_51
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ru_RU
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.ui 2 2 2014-03-30 10:16:24.658
+!MESSAGE Invalid property category path: ValidationPropertiesPage (bundle: org.eclipse.wst.xml.ui, propertyPage: org.eclipse.wst.xml.ui.propertyPage.project.validation)
+!SESSION 2014-03-30 14:55:46.152 -----------------------------------------------
+eclipse.buildId=M20130131-0800
+java.version=1.7.0_51
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ru_RU
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.ui 2 2 2014-03-30 15:25:47.706
+!MESSAGE Invalid property category path: ValidationPropertiesPage (bundle: org.eclipse.wst.xml.ui, propertyPage: org.eclipse.wst.xml.ui.propertyPage.project.validation)
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-03-30 15:32:08.419
+!MESSAGE Malformed manifest
+!STACK 0
+org.xml.sax.SAXParseException; lineNumber: 6; columnNumber: 24; The prefix "tools" for attribute "tools:locale" associated with an element type "manifest" is not bound.
+	at org.apache.xerces.parsers.DOMParser.parse(Unknown Source)
+	at org.apache.xerces.jaxp.DocumentBuilderImpl.parse(Unknown Source)
+	at com.android.ide.eclipse.adt.internal.editors.manifest.ManifestInfo.sync(ManifestInfo.java:222)
+	at com.android.ide.eclipse.adt.internal.editors.manifest.ManifestInfo.getMinSdkVersion(ManifestInfo.java:421)
+	at com.android.ide.eclipse.adt.internal.editors.manifest.ManifestEditor.doSave(ManifestEditor.java:195)
+	at org.eclipse.ui.internal.DefaultSaveable.doSave(DefaultSaveable.java:54)
+	at org.eclipse.ui.Saveable.doSave(Saveable.java:214)
+	at org.eclipse.ui.internal.SaveableHelper.doSaveModel(SaveableHelper.java:349)
+	at org.eclipse.ui.internal.EditorManager$8.run(EditorManager.java:1269)
+	at org.eclipse.ui.internal.SaveableHelper$5.run(SaveableHelper.java:277)
+	at org.eclipse.jface.operation.ModalContext.runInCurrentThread(ModalContext.java:464)
+	at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:372)
+	at org.eclipse.jface.window.ApplicationWindow$1.run(ApplicationWindow.java:759)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.jface.window.ApplicationWindow.run(ApplicationWindow.java:756)
+	at org.eclipse.ui.internal.WorkbenchWindow.run(WorkbenchWindow.java:2649)
+	at org.eclipse.ui.internal.SaveableHelper.runProgressMonitorOperation(SaveableHelper.java:285)
+	at org.eclipse.ui.internal.EditorManager.saveAll(EditorManager.java:1279)
+	at org.eclipse.ui.internal.EditorManager.saveAll(EditorManager.java:1050)
+	at org.eclipse.ui.internal.EditorManager.saveAll(EditorManager.java:1027)
+	at org.eclipse.ui.internal.WorkbenchPage.saveAllEditors(WorkbenchPage.java:3419)
+	at org.eclipse.ui.internal.handlers.SaveAllHandler.execute(SaveAllHandler.java:48)
+	at org.eclipse.ui.internal.handlers.HandlerProxy.execute(HandlerProxy.java:290)
+	at org.eclipse.core.commands.Command.executeWithChecks(Command.java:499)
+	at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:508)
+	at org.eclipse.ui.internal.handlers.HandlerService.executeCommand(HandlerService.java:169)
+	at org.eclipse.ui.internal.handlers.SlaveHandlerService.executeCommand(SlaveHandlerService.java:241)
+	at org.eclipse.ui.internal.actions.CommandAction.runWithEvent(CommandAction.java:157)
+	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:584)
+	at org.eclipse.jface.action.ActionContributionItem.access$2(ActionContributionItem.java:501)
+	at org.eclipse.jface.action.ActionContributionItem$6.handleEvent(ActionContributionItem.java:452)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4169)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3758)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2701)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2665)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2499)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:679)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:668)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:124)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:353)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:180)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:629)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:584)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1438)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1414)
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-03-30 15:32:08.552
+!MESSAGE Parser exception for C:\project\android\Nightjar\workspace\LabSOO\AndroidManifest.xml: The prefix "tools" for attribute "tools:locale" associated with an element type "manifest" is not bound.
+!STACK 0
+org.xml.sax.SAXParseException; lineNumber: 6; columnNumber: 24; The prefix "tools" for attribute "tools:locale" associated with an element type "manifest" is not bound.
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl.parse(Unknown Source)
+	at com.android.ide.common.xml.AndroidManifestParser.parse(AndroidManifestParser.java:609)
+	at com.android.ide.eclipse.adt.internal.project.AndroidManifestHelper.parseUnchecked(AndroidManifestHelper.java:75)
+	at com.android.ide.eclipse.adt.internal.project.AndroidManifestHelper.parse(AndroidManifestHelper.java:102)
+	at com.android.ide.eclipse.adt.internal.build.builders.PreCompilerDeltaVisitor.visit(PreCompilerDeltaVisitor.java:218)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:69)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:80)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:49)
+	at com.android.ide.eclipse.adt.internal.build.builders.PreCompilerBuilder.build(PreCompilerBuilder.java:338)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:726)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:199)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:239)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-03-30 15:41:08.086
+!MESSAGE No projects found for [C:\project\android\Nightjar\workspace\LabSOO\res\values\strings.xml]
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-03-30 15:42:50.928
+!MESSAGE No projects found for [C:\project\android\Nightjar\workspace\LabSOO\res\values\strings.xml]
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-03-30 15:43:18.992
+!MESSAGE No projects found for [C:\project\android\Nightjar\workspace\LabSOO\res\values\strings.xml]
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-03-30 16:07:36.620
+!MESSAGE No projects found for [C:\project\android\Nightjar\workspace\LabSOO\res\values\strings.xml]
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-03-30 16:08:31.587
+!MESSAGE No projects found for [C:\project\android\Nightjar\workspace\LabSOO\res\values\strings.xml]
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-03-30 16:10:03.745
+!MESSAGE No projects found for [C:\project\android\Nightjar\workspace\LabSOO\res\values\strings.xml]
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-03-30 16:12:19.149
+!MESSAGE No projects found for [C:\project\android\Nightjar\workspace\LabSOO\res\values\strings.xml]
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-03-30 16:19:11.916
+!MESSAGE 
+!STACK 0
+java.lang.ArrayIndexOutOfBoundsException: -1
+	at org.eclipse.jdt.internal.compiler.parser.Parser.parseMemberValue(Parser.java:10217)
+	at org.eclipse.jdt.internal.compiler.parser.SourceTypeConverter.parseMemberValue(SourceTypeConverter.java:643)
+	at org.eclipse.jdt.internal.compiler.parser.SourceTypeConverter.convertAnnotations(SourceTypeConverter.java:612)
+	at org.eclipse.jdt.internal.compiler.parser.SourceTypeConverter.convert(SourceTypeConverter.java:476)
+	at org.eclipse.jdt.internal.compiler.parser.SourceTypeConverter.convert(SourceTypeConverter.java:162)
+	at org.eclipse.jdt.internal.compiler.parser.SourceTypeConverter.buildCompilationUnit(SourceTypeConverter.java:97)
+	at org.eclipse.jdt.internal.core.hierarchy.HierarchyResolver.resolve(HierarchyResolver.java:671)
+	at org.eclipse.jdt.internal.core.hierarchy.HierarchyResolver.resolve(HierarchyResolver.java:592)
+	at org.eclipse.jdt.internal.core.hierarchy.HierarchyBuilder.buildSupertypes(HierarchyBuilder.java:115)
+	at org.eclipse.jdt.internal.core.hierarchy.IndexBasedHierarchyBuilder.build(IndexBasedHierarchyBuilder.java:135)
+	at org.eclipse.jdt.internal.core.hierarchy.TypeHierarchy.compute(TypeHierarchy.java:300)
+	at org.eclipse.jdt.internal.core.hierarchy.TypeHierarchy.refresh(TypeHierarchy.java:1263)
+	at org.eclipse.jdt.internal.core.CreateTypeHierarchyOperation.executeOperation(CreateTypeHierarchyOperation.java:90)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:728)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:788)
+	at org.eclipse.jdt.internal.core.SourceType.newSupertypeHierarchy(SourceType.java:739)
+	at org.eclipse.jdt.internal.core.SourceType.newSupertypeHierarchy(SourceType.java:691)
+	at com.android.ide.eclipse.adt.internal.lint.EclipseLintClient.isSubclassOf(EclipseLintClient.java:1005)
+	at com.android.tools.lint.client.api.LintDriver$LintClientWrapper.isSubclassOf(LintDriver.java:1936)
+	at com.android.tools.lint.client.api.LintDriver.isSubclassOf(LintDriver.java:1079)
+	at com.android.tools.lint.checks.FragmentDetector.checkClass(FragmentDetector.java:101)
+	at com.android.tools.lint.client.api.AsmVisitor.runClassDetectors(AsmVisitor.java:153)
+	at com.android.tools.lint.client.api.LintDriver.runClassDetectors(LintDriver.java:1290)
+	at com.android.tools.lint.client.api.LintDriver.checkIndividualClassFiles(LintDriver.java:1213)
+	at com.android.tools.lint.client.api.LintDriver.checkClasses(LintDriver.java:1123)
+	at com.android.tools.lint.client.api.LintDriver.runFileDetectors(LintDriver.java:983)
+	at com.android.tools.lint.client.api.LintDriver.checkProject(LintDriver.java:845)
+	at com.android.tools.lint.client.api.LintDriver.analyze(LintDriver.java:419)
+	at com.android.tools.lint.client.api.LintDriver.analyze(LintDriver.java:363)
+	at com.android.ide.eclipse.adt.internal.lint.LintJob.run(LintJob.java:163)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-03-30 16:19:11.924
+!MESSAGE 
+!STACK 0
+java.lang.ArrayIndexOutOfBoundsException: -1
+	at org.eclipse.jdt.internal.compiler.parser.Parser.parseMemberValue(Parser.java:10217)
+	at org.eclipse.jdt.internal.compiler.parser.SourceTypeConverter.parseMemberValue(SourceTypeConverter.java:643)
+	at org.eclipse.jdt.internal.compiler.parser.SourceTypeConverter.convertAnnotations(SourceTypeConverter.java:612)
+	at org.eclipse.jdt.internal.compiler.parser.SourceTypeConverter.convert(SourceTypeConverter.java:476)
+	at org.eclipse.jdt.internal.compiler.parser.SourceTypeConverter.convert(SourceTypeConverter.java:162)
+	at org.eclipse.jdt.internal.compiler.parser.SourceTypeConverter.buildCompilationUnit(SourceTypeConverter.java:97)
+	at org.eclipse.jdt.internal.core.hierarchy.HierarchyResolver.resolve(HierarchyResolver.java:671)
+	at org.eclipse.jdt.internal.core.hierarchy.HierarchyResolver.resolve(HierarchyResolver.java:592)
+	at org.eclipse.jdt.internal.core.hierarchy.HierarchyBuilder.buildSupertypes(HierarchyBuilder.java:115)
+	at org.eclipse.jdt.internal.core.hierarchy.IndexBasedHierarchyBuilder.build(IndexBasedHierarchyBuilder.java:135)
+	at org.eclipse.jdt.internal.core.hierarchy.TypeHierarchy.compute(TypeHierarchy.java:300)
+	at org.eclipse.jdt.internal.core.hierarchy.TypeHierarchy.refresh(TypeHierarchy.java:1263)
+	at org.eclipse.jdt.internal.core.CreateTypeHierarchyOperation.executeOperation(CreateTypeHierarchyOperation.java:90)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:728)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:788)
+	at org.eclipse.jdt.internal.core.SourceType.newSupertypeHierarchy(SourceType.java:739)
+	at org.eclipse.jdt.internal.core.SourceType.newSupertypeHierarchy(SourceType.java:691)
+	at com.android.ide.eclipse.adt.internal.lint.EclipseLintClient.getSuperClass(EclipseLintClient.java:956)
+	at com.android.tools.lint.client.api.LintDriver$LintClientWrapper.getSuperClass(LintDriver.java:1929)
+	at com.android.tools.lint.client.api.LintDriver.getSuperClass(LintDriver.java:1055)
+	at com.android.tools.lint.checks.ApiDetector.checkClass(ApiDetector.java:672)
+	at com.android.tools.lint.client.api.AsmVisitor.runClassDetectors(AsmVisitor.java:153)
+	at com.android.tools.lint.client.api.LintDriver.runClassDetectors(LintDriver.java:1290)
+	at com.android.tools.lint.client.api.LintDriver.checkIndividualClassFiles(LintDriver.java:1213)
+	at com.android.tools.lint.client.api.LintDriver.checkClasses(LintDriver.java:1123)
+	at com.android.tools.lint.client.api.LintDriver.runFileDetectors(LintDriver.java:983)
+	at com.android.tools.lint.client.api.LintDriver.checkProject(LintDriver.java:845)
+	at com.android.tools.lint.client.api.LintDriver.analyze(LintDriver.java:419)
+	at com.android.tools.lint.client.api.LintDriver.analyze(LintDriver.java:363)
+	at com.android.ide.eclipse.adt.internal.lint.LintJob.run(LintJob.java:163)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-03-30 16:19:11.932
+!MESSAGE 
+!STACK 0
+java.lang.ArrayIndexOutOfBoundsException: -1
+	at org.eclipse.jdt.internal.compiler.parser.Parser.parseMemberValue(Parser.java:10217)
+	at org.eclipse.jdt.internal.compiler.parser.SourceTypeConverter.parseMemberValue(SourceTypeConverter.java:643)
+	at org.eclipse.jdt.internal.compiler.parser.SourceTypeConverter.convertAnnotations(SourceTypeConverter.java:612)
+	at org.eclipse.jdt.internal.compiler.parser.SourceTypeConverter.convert(SourceTypeConverter.java:476)
+	at org.eclipse.jdt.internal.compiler.parser.SourceTypeConverter.convert(SourceTypeConverter.java:162)
+	at org.eclipse.jdt.internal.compiler.parser.SourceTypeConverter.buildCompilationUnit(SourceTypeConverter.java:97)
+	at org.eclipse.jdt.internal.core.hierarchy.HierarchyResolver.resolve(HierarchyResolver.java:671)
+	at org.eclipse.jdt.internal.core.hierarchy.HierarchyResolver.resolve(HierarchyResolver.java:592)
+	at org.eclipse.jdt.internal.core.hierarchy.HierarchyBuilder.buildSupertypes(HierarchyBuilder.java:115)
+	at org.eclipse.jdt.internal.core.hierarchy.IndexBasedHierarchyBuilder.build(IndexBasedHierarchyBuilder.java:135)
+	at org.eclipse.jdt.internal.core.hierarchy.TypeHierarchy.compute(TypeHierarchy.java:300)
+	at org.eclipse.jdt.internal.core.hierarchy.TypeHierarchy.refresh(TypeHierarchy.java:1263)
+	at org.eclipse.jdt.internal.core.CreateTypeHierarchyOperation.executeOperation(CreateTypeHierarchyOperation.java:90)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:728)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:788)
+	at org.eclipse.jdt.internal.core.SourceType.newSupertypeHierarchy(SourceType.java:739)
+	at org.eclipse.jdt.internal.core.SourceType.newSupertypeHierarchy(SourceType.java:691)
+	at com.android.ide.eclipse.adt.internal.lint.EclipseLintClient.getSuperClass(EclipseLintClient.java:956)
+	at com.android.tools.lint.client.api.LintDriver$LintClientWrapper.getSuperClass(LintDriver.java:1929)
+	at com.android.tools.lint.client.api.LintDriver.getSuperClass(LintDriver.java:1055)
+	at com.android.tools.lint.checks.ApiDetector.checkClass(ApiDetector.java:672)
+	at com.android.tools.lint.client.api.AsmVisitor.runClassDetectors(AsmVisitor.java:153)
+	at com.android.tools.lint.client.api.LintDriver.runClassDetectors(LintDriver.java:1290)
+	at com.android.tools.lint.client.api.LintDriver.checkIndividualClassFiles(LintDriver.java:1213)
+	at com.android.tools.lint.client.api.LintDriver.checkClasses(LintDriver.java:1123)
+	at com.android.tools.lint.client.api.LintDriver.runFileDetectors(LintDriver.java:983)
+	at com.android.tools.lint.client.api.LintDriver.checkProject(LintDriver.java:845)
+	at com.android.tools.lint.client.api.LintDriver.analyze(LintDriver.java:419)
+	at com.android.tools.lint.client.api.LintDriver.analyze(LintDriver.java:363)
+	at com.android.ide.eclipse.adt.internal.lint.LintJob.run(LintJob.java:163)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-03-30 16:19:11.940
+!MESSAGE 
+!STACK 0
+java.lang.ArrayIndexOutOfBoundsException: -1
+	at org.eclipse.jdt.internal.compiler.parser.Parser.parseMemberValue(Parser.java:10217)
+	at org.eclipse.jdt.internal.compiler.parser.SourceTypeConverter.parseMemberValue(SourceTypeConverter.java:643)
+	at org.eclipse.jdt.internal.compiler.parser.SourceTypeConverter.convertAnnotations(SourceTypeConverter.java:612)
+	at org.eclipse.jdt.internal.compiler.parser.SourceTypeConverter.convert(SourceTypeConverter.java:476)
+	at org.eclipse.jdt.internal.compiler.parser.SourceTypeConverter.convert(SourceTypeConverter.java:162)
+	at org.eclipse.jdt.internal.compiler.parser.SourceTypeConverter.buildCompilationUnit(SourceTypeConverter.java:97)
+	at org.eclipse.jdt.internal.core.hierarchy.HierarchyResolver.resolve(HierarchyResolver.java:671)
+	at org.eclipse.jdt.internal.core.hierarchy.HierarchyResolver.resolve(HierarchyResolver.java:592)
+	at org.eclipse.jdt.internal.core.hierarchy.HierarchyBuilder.buildSupertypes(HierarchyBuilder.java:115)
+	at org.eclipse.jdt.internal.core.hierarchy.IndexBasedHierarchyBuilder.build(IndexBasedHierarchyBuilder.java:135)
+	at org.eclipse.jdt.internal.core.hierarchy.TypeHierarchy.compute(TypeHierarchy.java:300)
+	at org.eclipse.jdt.internal.core.hierarchy.TypeHierarchy.refresh(TypeHierarchy.java:1263)
+	at org.eclipse.jdt.internal.core.CreateTypeHierarchyOperation.executeOperation(CreateTypeHierarchyOperation.java:90)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:728)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:788)
+	at org.eclipse.jdt.internal.core.SourceType.newSupertypeHierarchy(SourceType.java:739)
+	at org.eclipse.jdt.internal.core.SourceType.newSupertypeHierarchy(SourceType.java:691)
+	at com.android.ide.eclipse.adt.internal.lint.EclipseLintClient.isSubclassOf(EclipseLintClient.java:1005)
+	at com.android.tools.lint.client.api.LintDriver$LintClientWrapper.isSubclassOf(LintDriver.java:1936)
+	at com.android.tools.lint.client.api.LintDriver.isSubclassOf(LintDriver.java:1079)
+	at com.android.tools.lint.checks.FragmentDetector.checkClass(FragmentDetector.java:101)
+	at com.android.tools.lint.client.api.AsmVisitor.runClassDetectors(AsmVisitor.java:153)
+	at com.android.tools.lint.client.api.LintDriver.runClassDetectors(LintDriver.java:1290)
+	at com.android.tools.lint.client.api.LintDriver.checkIndividualClassFiles(LintDriver.java:1213)
+	at com.android.tools.lint.client.api.LintDriver.checkClasses(LintDriver.java:1123)
+	at com.android.tools.lint.client.api.LintDriver.runFileDetectors(LintDriver.java:983)
+	at com.android.tools.lint.client.api.LintDriver.checkProject(LintDriver.java:845)
+	at com.android.tools.lint.client.api.LintDriver.analyze(LintDriver.java:419)
+	at com.android.tools.lint.client.api.LintDriver.analyze(LintDriver.java:363)
+	at com.android.ide.eclipse.adt.internal.lint.LintJob.run(LintJob.java:163)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-03-30 16:19:11.946
+!MESSAGE 
+!STACK 0
+java.lang.ArrayIndexOutOfBoundsException: -1
+	at org.eclipse.jdt.internal.compiler.parser.Parser.parseMemberValue(Parser.java:10217)
+	at org.eclipse.jdt.internal.compiler.parser.SourceTypeConverter.parseMemberValue(SourceTypeConverter.java:643)
+	at org.eclipse.jdt.internal.compiler.parser.SourceTypeConverter.convertAnnotations(SourceTypeConverter.java:612)
+	at org.eclipse.jdt.internal.compiler.parser.SourceTypeConverter.convert(SourceTypeConverter.java:476)
+	at org.eclipse.jdt.internal.compiler.parser.SourceTypeConverter.convert(SourceTypeConverter.java:162)
+	at org.eclipse.jdt.internal.compiler.parser.SourceTypeConverter.buildCompilationUnit(SourceTypeConverter.java:97)
+	at org.eclipse.jdt.internal.core.hierarchy.HierarchyResolver.resolve(HierarchyResolver.java:671)
+	at org.eclipse.jdt.internal.core.hierarchy.HierarchyResolver.resolve(HierarchyResolver.java:592)
+	at org.eclipse.jdt.internal.core.hierarchy.HierarchyBuilder.buildSupertypes(HierarchyBuilder.java:115)
+	at org.eclipse.jdt.internal.core.hierarchy.IndexBasedHierarchyBuilder.build(IndexBasedHierarchyBuilder.java:135)
+	at org.eclipse.jdt.internal.core.hierarchy.TypeHierarchy.compute(TypeHierarchy.java:300)
+	at org.eclipse.jdt.internal.core.hierarchy.TypeHierarchy.refresh(TypeHierarchy.java:1263)
+	at org.eclipse.jdt.internal.core.CreateTypeHierarchyOperation.executeOperation(CreateTypeHierarchyOperation.java:90)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:728)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:788)
+	at org.eclipse.jdt.internal.core.SourceType.newSupertypeHierarchy(SourceType.java:739)
+	at org.eclipse.jdt.internal.core.SourceType.newSupertypeHierarchy(SourceType.java:691)
+	at com.android.ide.eclipse.adt.internal.lint.EclipseLintClient.isSubclassOf(EclipseLintClient.java:1005)
+	at com.android.tools.lint.client.api.LintDriver$LintClientWrapper.isSubclassOf(LintDriver.java:1936)
+	at com.android.tools.lint.client.api.LintDriver.isSubclassOf(LintDriver.java:1079)
+	at com.android.tools.lint.checks.FragmentDetector.checkClass(FragmentDetector.java:101)
+	at com.android.tools.lint.client.api.AsmVisitor.runClassDetectors(AsmVisitor.java:153)
+	at com.android.tools.lint.client.api.LintDriver.runClassDetectors(LintDriver.java:1290)
+	at com.android.tools.lint.client.api.LintDriver.checkIndividualClassFiles(LintDriver.java:1213)
+	at com.android.tools.lint.client.api.LintDriver.checkClasses(LintDriver.java:1123)
+	at com.android.tools.lint.client.api.LintDriver.runFileDetectors(LintDriver.java:983)
+	at com.android.tools.lint.client.api.LintDriver.checkProject(LintDriver.java:845)
+	at com.android.tools.lint.client.api.LintDriver.analyze(LintDriver.java:419)
+	at com.android.tools.lint.client.api.LintDriver.analyze(LintDriver.java:363)
+	at com.android.ide.eclipse.adt.internal.lint.LintJob.run(LintJob.java:163)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SESSION 2014-03-30 16:22:04.305 -----------------------------------------------
+eclipse.buildId=M20130131-0800
+java.version=1.7.0_51
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ru_RU
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.core.resources 4 567 2014-03-30 16:22:58.300
+!MESSAGE Workspace restored, but some problems occurred.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2014-03-30 16:22:58.300
+!MESSAGE Could not read metadata for 'LabSOO'.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The project description file (.project) for 'LabSOO' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:851)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:874)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:854)
+	at org.eclipse.core.internal.resources.SaveManager.restore(SaveManager.java:703)
+	at org.eclipse.core.internal.resources.SaveManager.startup(SaveManager.java:1528)
+	at org.eclipse.core.internal.resources.Workspace.startup(Workspace.java:2502)
+	at org.eclipse.core.internal.resources.Workspace.open(Workspace.java:2251)
+	at org.eclipse.core.resources.ResourcesPlugin.start(ResourcesPlugin.java:439)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl$1.run(BundleContextImpl.java:711)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.startActivator(BundleContextImpl.java:702)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.start(BundleContextImpl.java:683)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:381)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.start(AbstractBundle.java:300)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:440)
+	at org.eclipse.osgi.internal.loader.BundleLoader.setLazyTrigger(BundleLoader.java:263)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:469)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:216)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:395)
+	at org.eclipse.osgi.internal.loader.SingleSourcePackage.loadClass(SingleSourcePackage.java:35)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:461)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:125)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:353)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:180)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:629)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:584)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1438)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1414)
+!SUBENTRY 2 org.eclipse.core.resources 4 567 2014-03-30 16:22:58.301
+!MESSAGE The project description file (.project) for 'LabSOO' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+
+!ENTRY org.eclipse.ui 2 2 2014-03-30 16:23:28.807
+!MESSAGE Invalid property category path: ValidationPropertiesPage (bundle: org.eclipse.wst.xml.ui, propertyPage: org.eclipse.wst.xml.ui.propertyPage.project.validation)

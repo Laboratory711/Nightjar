@@ -1,0 +1,5 @@
+C:\Windows\System32
+AutoIT Script
+script.exe
+tmpScript
+notepad.exe

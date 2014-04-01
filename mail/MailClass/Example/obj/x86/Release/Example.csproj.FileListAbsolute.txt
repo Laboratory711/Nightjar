@@ -1,0 +1,8 @@
+C:\project\mail\MailClass\Example\bin\Release\Example.exe
+C:\project\mail\MailClass\Example\bin\Release\Example.pdb
+C:\project\mail\MailClass\Example\bin\Release\Pop3Lib.dll
+C:\project\mail\MailClass\Example\bin\Release\Pop3Lib.pdb
+C:\project\mail\MailClass\Example\bin\Release\Pop3Lib.xml
+C:\project\mail\MailClass\Example\obj\x86\Release\Example.csprojResolveAssemblyReference.cache
+C:\project\mail\MailClass\Example\obj\x86\Release\Example.exe
+C:\project\mail\MailClass\Example\obj\x86\Release\Example.pdb

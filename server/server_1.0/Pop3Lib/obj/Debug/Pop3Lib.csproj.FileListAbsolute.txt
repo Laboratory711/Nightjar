@@ -1,0 +1,10 @@
+C:\project\mail\MailClass\Pop3Lib\bin\Debug\Pop3Lib.dll
+C:\project\mail\MailClass\Pop3Lib\bin\Debug\Pop3Lib.pdb
+C:\project\mail\MailClass\Pop3Lib\obj\Debug\Pop3Lib.csprojResolveAssemblyReference.cache
+C:\project\mail\MailClass\Pop3Lib\obj\Debug\Pop3Lib.dll
+C:\project\mail\MailClass\Pop3Lib\obj\Debug\Pop3Lib.pdb
+C:\project\server\server_1.0\Pop3Lib\bin\Debug\Pop3Lib.dll
+C:\project\server\server_1.0\Pop3Lib\bin\Debug\Pop3Lib.pdb
+C:\project\server\server_1.0\Pop3Lib\obj\Debug\Pop3Lib.csprojResolveAssemblyReference.cache
+C:\project\server\server_1.0\Pop3Lib\obj\Debug\Pop3Lib.dll
+C:\project\server\server_1.0\Pop3Lib\obj\Debug\Pop3Lib.pdb

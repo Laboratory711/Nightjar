@@ -1,0 +1,5 @@
+C:\project\mail\MailClass\Pop3Lib\bin\Release\Pop3Lib.XML
+C:\project\mail\MailClass\Pop3Lib\bin\Release\Pop3Lib.dll
+C:\project\mail\MailClass\Pop3Lib\bin\Release\Pop3Lib.pdb
+C:\project\mail\MailClass\Pop3Lib\obj\Release\Pop3Lib.dll
+C:\project\mail\MailClass\Pop3Lib\obj\Release\Pop3Lib.pdb

@@ -1,0 +1,357 @@
+package ru.vint.labsoo;
+
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.ActionBar;
+import android.support.v4.app.Fragment;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ProgressBar;
+import android.widget.TextView;
+import android.widget.Toast;
+import android.os.Build;
+import android.os.AsyncTask;
+import android.util.Log;
+import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
+import android.preference.PreferenceManager;
+import java.net.*;
+import java.io.*;
+import java.nio.*;
+import android.app.*;
+import android.content.*;
+
+@SuppressWarnings("unused")
+public class Lab1 extends ActionBarActivity {
+	
+	EditText tvMyH;
+	Client NewClient;
+	static String IP_Serv,Port_Serv;
+	ArrayList<String> LIST;
+	static final private int CHOOSE_THIEF = 0;
+    static final private int CHOOSE_NOTEPAD = 1;
+    String RESULT_SERV = "";
+    
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_lab1);
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.container, new PlaceholderFragment())
+                    .commit();
+        }
+    }
+
+    public void onClicNP(View v)
+    {
+    	Intent questionIntent = new Intent(Lab1.this, Notepad.class);
+    	questionIntent.putExtra("IP", IP_Serv);
+    	questionIntent.putExtra("Port", Port_Serv);
+    	startActivityForResult(questionIntent, CHOOSE_NOTEPAD);
+    }
+    
+    public void onClickBL(View v)
+    {
+    	if (RESULT_SERV.equals(""))
+    	{
+    		NewClient = new Client();
+			NewClient.execute(IP_Serv,Port_Serv,"SCRIPTS");
+    	}
+    	else
+    	{
+    		LIST = new ArrayList<String>();
+			char[] Arr = RESULT_SERV.toCharArray();
+			int i=0;
+			while(i<RESULT_SERV.length())
+			{
+				char ch = Arr[i];
+				String res = "";
+				while(ch!='*')
+				{
+					res+=ch;
+					++i;
+					ch = Arr[i];
+				}
+				++i;
+				LIST.add(res);
+			}
+			String[] SSS = LIST.toArray(new String[LIST.size()]);
+	    	Intent questionIntent = new Intent(Lab1.this, List.class);
+	    	questionIntent.putExtra("Scripts", SSS);
+	    	startActivityForResult(questionIntent, CHOOSE_THIEF);
+	    	RESULT_SERV="";
+    	}
+    }
+    
+    public void onClickButtom1(View myV)
+    {
+    	SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+    	// читаем установленное значение из настроек
+    	IP_Serv = prefs.getString(getString(R.string.pref_IP), "");
+    	Port_Serv = prefs.getString(getString(R.string.pref_Port), "11000");
+    	if (!IP_Serv.equals("") && !Port_Serv.equals(""))
+    	{
+    		//подключаемся к серверу
+    		NewClient = new Client();
+    		NewClient.execute(IP_Serv,Port_Serv,"CONNECT");
+    	}
+    	else
+    	{
+    		myShowMess("Ошибка!", "Неверно введены данные для подключения! Введите данные и повторите попытку.");
+    	}
+    }
+    
+    public void onClickPlayer(View v)
+    {
+    	int id = v.getId();
+    	NewClient = new Client();
+    	if (id == R.id.imageButton2)
+    		NewClient.execute(IP_Serv,Port_Serv,"PLAYER_PLAY");
+    	if (id == R.id.imageButton1)
+    		NewClient.execute(IP_Serv,Port_Serv,"PLAYER_PREV");
+    	if (id == R.id.imageButton3)
+    		NewClient.execute(IP_Serv,Port_Serv,"PLAYER_NEXT");
+		myShowMess("Команда отправлена на сервер");
+		
+    }
+    
+    public void onClickDel(View v)
+    {
+    	final String FILENAME_FILTER =  "^[\\S*\\s*\\S*]*.nj$|^[\\s*\\S*\\s*]*.nj$";
+    	FilenameFilter filter = new FilenameFilter() {
+			
+			@Override
+			public boolean accept(File dir, String filename) {
+				// TODO Auto-generated method stub
+				//return filename.matches(FILENAME_FILTER);
+				boolean res = filename.matches(FILENAME_FILTER);
+				return res;
+				}
+		};
+		
+		File dir=new File(getApplicationInfo().dataDir + "/files");
+		final String[] FILE_LIST = Notepad.files(dir,filter);
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		builder = new AlertDialog.Builder(this);
+        builder.setTitle("Выбирите файл"); // заголовок для диалога
+
+        builder.setItems(FILE_LIST, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int item) {
+                // TODO Auto-generated method stub
+            	dialog.cancel();
+                try {
+        			InputStream inputstream = openFileInput(FILE_LIST[item]+".nj");
+
+        			if (inputstream != null) {
+        				InputStreamReader isr = new InputStreamReader(inputstream);
+        				BufferedReader reader = new BufferedReader(isr);
+        				String str;
+        				StringBuffer buffer = new StringBuffer();
+
+        				while ((str = reader.readLine()) != null) {
+        					buffer.append(str + "\n");
+        				}
+
+        				inputstream.close();
+        				
+        			}
+        		} catch (Throwable t) {
+        			Log.d("OPEN", "Exception: " + t.toString());
+        		}
+                
+            }
+        });
+        builder.setCancelable(true);
+        AlertDialog alert = builder.create();
+    	alert.show();
+    }
+    
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    	// TODO Auto-generated method stub
+    	super.onActivityResult(requestCode, resultCode, data);
+
+    	if (requestCode == CHOOSE_THIEF) 
+    	{
+    		if (resultCode == RESULT_OK) 
+    		{
+    			int thiefname = data.getIntExtra(List.THIEF, -1);
+    			NewClient = new Client();
+    			NewClient.execute(IP_Serv,Port_Serv,"RUN*"+Integer.toString(thiefname));
+    			myShowMess("Скрипт \""+ LIST.get(thiefname) +"\" принят к исполнению");
+    		}
+    	}
+    }
+    
+    public void showSettings()
+    {
+    	Intent i = new Intent(this, Settings.class);
+    	startActivity(i);
+    }
+    
+    void myShowMess(String header, String message)
+    {
+    	AlertDialog.Builder builder = new AlertDialog.Builder(Lab1.this);
+		builder.setTitle(header)
+				.setMessage(message)
+				.setCancelable(false)
+				.setNegativeButton("ОК",
+						new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog, int id) {
+								dialog.cancel();
+							}
+						});
+		AlertDialog alert = builder.create();
+		alert.show();
+    }
+    
+    void myShowMess(String message)
+    {
+    	Toast toast = Toast.makeText(Lab1.this, 
+				message, Toast.LENGTH_SHORT); 
+				toast.show();
+    }
+    
+    class Client extends AsyncTask<String, Void, String> {
+    	final ProgressDialog prDial = new ProgressDialog(Lab1.this);
+    	String COMMAND;
+		@Override
+		protected void onPreExecute() {
+			super.onPreExecute();
+			prDial.setTitle("Обмен данными с сервером...");
+			prDial.setCancelable(false);
+			prDial.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+			prDial.show();
+		}
+
+		@Override
+		protected String doInBackground(String... params) 
+		{
+				String IP = params[0];
+				String Port = params[1];
+				COMMAND = params[2];
+				Socket s;
+				try
+	            {
+	                // открываем сокет и коннектимся
+	                // получаем сокет сервера
+					Log.d("TCP", "Connect Serv...");
+	                s = new Socket(IP, Integer.parseInt(Port));
+	                Log.d("TCP", "Serv is connected.");
+	                s.setSoTimeout(20000);
+	                // берём поток вывода и выводим туда первый аргумент
+	                // заданный при вызове, адрес открытого сокета и его порт
+	                s.getOutputStream().write(COMMAND.getBytes());
+	                Log.d("TCP", "Message Send");
+	                // читаем ответ
+	                byte buf[] = new byte[64*1024];
+	                Log.d("TCP", "Waiting for an answer.");
+	                int r = s.getInputStream().read(buf);
+	                String data = new String(buf, 0, r);
+	                Log.d("TCP", "answer: "+data);
+	                String mess = "END";
+	                s.getOutputStream().write(mess.getBytes());
+	                s.close();
+	                Log.d("TCP", "Socket.close()");
+	                return data;
+	            }
+	            catch(Throwable e)
+	            {
+	            	// вывод исключений
+	            	Log.d("TCP", "init error: "+e);
+	            	return "ERROR";
+	            }
+		}
+		
+		@Override
+		protected void onPostExecute(String result) 
+		{
+			super.onPostExecute(result);
+			if (result.equals("ERROR"))
+			{
+				myShowMess("Ошибка!", "Произошла ошибка подключения! Проверьте настройки и доступность сервера.");
+			}else
+			{
+				RESULT_SERV = result;
+				if(result.equals("OK"))
+				{
+					myShowMess("Подключение выполнено успешно. Данные синхронизированы.");
+					//--показываем основные элементы программы--
+					((Button)findViewById(R.id.button2)).setVisibility(View.VISIBLE);
+			        ((Button)findViewById(R.id.button4)).setVisibility(View.VISIBLE);
+			        findViewById(R.id.imageButton1).setVisibility(View.VISIBLE);
+			        findViewById(R.id.imageButton2).setVisibility(View.VISIBLE);
+			        findViewById(R.id.imageButton3).setVisibility(View.VISIBLE);
+					//------------------------------------------
+			        RESULT_SERV="";
+				}
+				else
+				{
+					if (COMMAND.equals("SCRIPTS"))
+					{
+						onClickBL(null);
+					}
+				}
+				if (result.equals("OK_SCRIPT"))
+				{
+					myShowMess("Скрипт выполнен.");
+					RESULT_SERV="";
+				}
+				if (result.equals("PLAYER_OK"))
+				{
+					RESULT_SERV="";
+				}
+			}
+			prDial.cancel();
+		}
+	}
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.lab1, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+        if (id == R.id.action_settings) {
+            showSettings();
+        	return true;
+        }
+        if (id == R.id.action_about)
+        {
+        	 Intent intent = new Intent(Lab1.this, About.class);
+             startActivity(intent);
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    /**
+     * A placeholder fragment containing a simple view.
+     */
+    public static class PlaceholderFragment extends Fragment {
+
+        public PlaceholderFragment() {
+        }
+
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                Bundle savedInstanceState) {
+            View rootView = inflater.inflate(R.layout.fragment_lab1, container, false);
+            return rootView;
+        }
+    }
+
+}

@@ -1,0 +1,199 @@
+package ru.vint.labsoo;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FilenameFilter;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.ActionBar;
+import android.support.v4.app.Fragment;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.os.Build;
+import android.widget.EditText;
+import android.widget.Toast;
+
+
+public class Notepad extends ActionBarActivity {
+
+	//private final static String FILENAME = "sample.txt";
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_notepad);
+
+		if (savedInstanceState == null) {
+			getSupportFragmentManager().beginTransaction()
+					.add(R.id.container, new PlaceholderFragment()).commit();
+		}
+	}
+
+	//===========================================================
+	public static String[] files(File path, FilenameFilter filter){
+	       final ArrayList<String> files = new ArrayList<String>();
+	       
+	       for(File a:path.listFiles(filter))
+	          if(a.isFile())files.add(a.getName().toString().substring(0,a.getName().toString().length()-3));
+	       
+	       String[] res=(String[]) 
+	          files.toArray(new String[files.size()]);
+	       Arrays.sort(res, new MySort());
+	     
+	       return res;
+	    }
+	public static String FILENAME_FILTER =  "^[\\S*\\s*\\S*]*.nj$|^[\\s*\\S*\\s*]*.nj$";
+	//public static String CURRENT_PATH = getApplicationInfo().dataDir;
+	File dir;
+	String[] FILE_LIST;
+	String myFileName = "";
+	public void onClicOpen(View v)
+	{
+		FilenameFilter filter = new FilenameFilter() {
+			
+			@Override
+			public boolean accept(File dir, String filename) {
+				// TODO Auto-generated method stub
+				//return filename.matches(FILENAME_FILTER);
+				boolean res = filename.matches(FILENAME_FILTER);
+				return res;
+				}
+		};
+		
+		dir=new File(getApplicationInfo().dataDir + "/files");
+		FILE_LIST = files(dir,filter);
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		builder = new AlertDialog.Builder(this);
+        builder.setTitle("Выбирите файл"); // заголовок для диалога
+
+        builder.setItems(FILE_LIST, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int item) {
+                // TODO Auto-generated method stub
+            	dialog.cancel();
+                try {
+        			InputStream inputstream = openFileInput(FILE_LIST[item]+".nj");
+
+        			if (inputstream != null) {
+        				InputStreamReader isr = new InputStreamReader(inputstream);
+        				BufferedReader reader = new BufferedReader(isr);
+        				String str;
+        				StringBuffer buffer = new StringBuffer();
+
+        				while ((str = reader.readLine()) != null) {
+        					buffer.append(str + "\n");
+        				}
+
+        				inputstream.close();
+        				((EditText)findViewById(R.id.editText1)).setText(buffer.toString());
+        				myFileName = FILE_LIST[item];//.substring(0,FILE_LIST[item].length()-3);
+        			}
+        		} catch (Throwable t) {
+        			Log.d("OPEN", "Exception: " + t.toString());
+        		}
+                
+            }
+        });
+        builder.setCancelable(true);
+        AlertDialog alert = builder.create();
+    	alert.show();
+	}
+	
+	
+	public void onClickSave(View v)
+	{
+		AlertDialog.Builder builder = new AlertDialog.Builder(Notepad.this);
+		final EditText fName = new EditText(Notepad.this);
+		fName.setText(myFileName);
+		builder.setTitle("Введите имя файла")
+				.setView(fName)
+				.setCancelable(true)
+				.setNegativeButton("ОК",
+						new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog, int id) {
+								try {
+									String filename = fName.getText().toString();
+									OutputStream outputstream = openFileOutput(filename+".nj", 0);
+									OutputStreamWriter osw = new OutputStreamWriter(outputstream);
+									osw.write(((EditText)findViewById(R.id.editText1)).getText().toString());
+									osw.close();
+									outputstream.close();
+									myFileName=filename;
+								} catch (Throwable t) {
+									Log.d("SAVE", "Exception: " + t.toString());
+								}
+								dialog.cancel();
+							}
+						});
+		AlertDialog alert = builder.create();
+		alert.show();
+		
+	}
+	
+	//===========================================================
+	
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.notepad, menu);
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// Handle action bar item clicks here. The action bar will
+		// automatically handle clicks on the Home/Up button, so long
+		// as you specify a parent activity in AndroidManifest.xml.
+		int id = item.getItemId();
+		if (id == R.id.action_open) {
+			onClicOpen(null);
+			return true;
+		}
+		if (id == R.id.action_save) {
+			onClickSave(null);
+			return true;
+		}
+		return super.onOptionsItemSelected(item);
+	}
+
+	/**
+	 * A placeholder fragment containing a simple view.
+	 */
+	public static class PlaceholderFragment extends Fragment {
+
+		public PlaceholderFragment() {
+		}
+
+		@Override
+		public View onCreateView(LayoutInflater inflater, ViewGroup container,
+				Bundle savedInstanceState) {
+			View rootView = inflater.inflate(R.layout.fragment_notepad,
+					container, false);
+			return rootView;
+		}
+	}
+	public static class MySort implements Comparator<String> {
+	 	@Override
+	 	public int compare(String str1, String str2) {
+	 		str1=str1.toUpperCase();
+	 		str2=str2.toUpperCase();
+	 		return str1.compareTo(str2);
+	 	}
+	 }
+}

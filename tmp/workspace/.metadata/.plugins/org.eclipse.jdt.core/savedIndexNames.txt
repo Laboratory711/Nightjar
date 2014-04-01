@@ -1,0 +1,3 @@
+INDEX VERSION 1.126+C:\project\android\Nightjar\workspace\.metadata\.plugins\org.eclipse.jdt.core
+633491474.index
+2125385118.index
